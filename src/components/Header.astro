@@ -1,0 +1,89 @@
+---
+const navItems = [
+  { href: '/', label: 'Accueil' },
+  { href: '/services', label: 'Nos Services' },
+  { href: '/locations', label: 'Zones' },
+  { href: '/about', label: 'À Propos' },
+];
+---
+
+<header class="header glass">
+  <div class="container header-content">
+    <a href="/" class="logo">
+      <span class="text-gradient">VENSOL</span>
+    </a>
+    
+    <nav class="desktop-nav">
+      <ul>
+        {navItems.map((item) => (
+          <li>
+            <a href={item.href} class="nav-link">{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    
+    <div class="header-actions">
+      <a href="/contact" class="btn btn-primary">Devis Gratuit</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+  }
+  
+  .desktop-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-link {
+    font-weight: 500;
+    font-size: 1.05rem;
+    position: relative;
+    padding-bottom: 0.25rem;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="À Propos" description="Découvrez l'histoire de VENSOL, votre entreprise de plomberie locale à Mouscron.">
+  <div class="page-header bg-surface">
+    <div class="container text-center">
+      <h1 class="text-4xl font-bold mb-4">À Propos de <span class="text-gradient">VENSOL</span></h1>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2 class="text-3xl font-bold mb-4">Notre Histoire</h2>
+        <p class="mb-4 text-lg">Fondée à Mouscron, VENSOL est née d'une passion pour le travail bien fait et d'une volonté d'offrir un service de plomberie de qualité supérieure à notre communauté locale.</p>
+        <p class="mb-6 text-lg text-muted">Avec plus de 15 ans d'expérience cumulée, notre équipe de professionnels qualifiés s'engage à résoudre vos problèmes de plomberie avec efficacité et transparence. Nous croyons que chaque client mérite une attention particulière et des solutions durables.</p>
+        
+        <div class="values-grid">
+          <div class="value-item">
+            <h3>🎯 Professionnalisme</h3>
+            <p class="text-muted">Des interventions réalisées dans les règles de l'art.</p>
+          </div>
+          <div class="value-item">
+            <h3>🤝 Confiance</h3>
+            <p class="text-muted">Des devis clairs et des tarifs transparents.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-image glass-card">
+        <div class="image-placeholder">
+          <span class="text-6xl mb-4 block">👨‍🔧</span>
+          <p class="text-xl font-bold">L'équipe VENSOL</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    padding: 6rem 0 4rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  
+  .text-4xl { font-size: 2.5rem; line-height: 1.1; }
+  .text-3xl { font-size: 1.875rem; }
+  .text-xl { font-size: 1.25rem; }
+  .text-lg { font-size: 1.125rem; }
+  .text-6xl { font-size: 4rem; }
+  .font-bold { font-weight: 700; }
+  .mb-4 { margin-bottom: 1rem; }
+  .mb-6 { margin-bottom: 1.5rem; }
+  .block { display: block; }
+  
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .value-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about-image {
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(30, 41, 59, 0.1) 100%);
+  }
+  
+  .image-placeholder {
+    text-align: center;
+  }
+  
+  @media (max-width: 992px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact" description="Contactez VENSOL pour un devis gratuit ou une intervention urgente en plomberie.">
+  <div class="page-header bg-surface">
+    <div class="container text-center">
+      <h1 class="text-4xl font-bold mb-4">Contactez-<span class="text-gradient">Nous</span></h1>
+      <p class="text-xl text-muted max-w-2xl mx-auto">Une urgence ? Un projet ? N'hésitez pas à nous contacter. Nous vous répondrons dans les plus brefs délais.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2 class="text-3xl font-bold mb-6">Nos Coordonnées</h2>
+        
+        <div class="info-card glass-card mb-4">
+          <h3>📍 Adresse</h3>
+          <p class="text-muted">123 Rue de la Plomberie<br/>7700 Mouscron, Belgique</p>
+        </div>
+        
+        <div class="info-card glass-card mb-4">
+          <h3>📞 Téléphone</h3>
+          <p class="text-muted"><a href="tel:+32123456789" class="hover-primary">+32 123 456 789</a></p>
+          <p class="text-sm mt-2 text-accent">Urgence 24/7 disponible</p>
+        </div>
+        
+        <div class="info-card glass-card">
+          <h3>✉️ Email</h3>
+          <p class="text-muted"><a href="mailto:contact@vensol.be" class="hover-primary">contact@vensol.be</a></p>
+        </div>
+      </div>
+      
+      <div class="contact-form-container glass-card">
+        <h2 class="text-2xl font-bold mb-6">Envoyez-nous un message</h2>
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom" />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="votre@email.com" />
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Votre numéro" />
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary w-full">Envoyer le message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    padding: 6rem 0 4rem;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  
+  .text-4xl { font-size: 2.5rem; line-height: 1.1; }
+  .text-3xl { font-size: 1.875rem; }
+  .text-2xl { font-size: 1.5rem; }
+  .text-xl { font-size: 1.25rem; }
+  .text-sm { font-size: 0.875rem; }
+  .font-bold { font-weight: 700; }
+  .mb-4 { margin-bottom: 1rem; }
+  .mb-6 { margin-bottom: 1.5rem; }
+  .mt-2 { margin-top: 0.5rem; }
+  .mx-auto { margin-left: auto; margin-right: auto; }
+  .max-w-2xl { max-width: 42rem; }
+  .w-full { width: 100%; }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+  }
+  
+  .info-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hover-primary:hover {
+    color: var(--primary-color);
+  }
+  
+  .contact-form-container {
+    padding: 3rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+  }
+  
+  @media (max-width: 992px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .contact-form-container {
+      padding: 1.5rem;
+    }
+  }
+</style>

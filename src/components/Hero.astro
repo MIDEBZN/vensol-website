@@ -1,0 +1,181 @@
+---
+export interface Props {
+  title: string;
+  subtitle: string;
+  primaryCta: string;
+  primaryHref: string;
+  secondaryCta?: string;
+  secondaryHref?: string;
+}
+
+const { title, subtitle, primaryCta, primaryHref, secondaryCta, secondaryHref } = Astro.props;
+---
+
+<section class="hero bg-surface relative">
+  <div class="hero-bg-accent"></div>
+  <div class="container hero-content">
+    <div class="hero-text animate-fade-in">
+      <h1 class="hero-title">
+        <span class="text-gradient" set:html={title}></span>
+      </h1>
+      <p class="hero-subtitle delay-100">{subtitle}</p>
+      
+      <div class="hero-actions delay-200">
+        <a href={primaryHref} class="btn btn-primary btn-lg">{primaryCta}</a>
+        {secondaryCta && secondaryHref && (
+          <a href={secondaryHref} class="btn btn-outline btn-lg">{secondaryCta}</a>
+        )}
+      </div>
+    </div>
+    
+    <div class="hero-visual delay-300 animate-fade-in">
+      <div class="glass-card hero-stats">
+        <div class="stat">
+          <span class="stat-value text-gradient">24/7</span>
+          <span class="stat-label">Dépannage d'urgence</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value text-gradient">15+</span>
+          <span class="stat-label">Ans d'expérience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding: 6rem 0 8rem 0;
+    overflow: hidden;
+  }
+  
+  .hero-bg-accent {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+  }
+  
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+  
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+  }
+  
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+  
+  .stat-divider {
+    height: 1px;
+    background: var(--glass-border);
+    width: 100%;
+  }
+  
+  @media (max-width: 992px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    
+    .hero-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-actions {
+      justify-content: center;
+    }
+    
+    .hero-stats {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+    }
+    
+    .stat-divider {
+      width: 1px;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-actions {
+      flex-direction: column;
+    }
+    
+    .hero-stats {
+      flex-direction: column;
+    }
+    
+    .stat-divider {
+      width: 100%;
+      height: 1px;
+    }
+  }
+</style>
